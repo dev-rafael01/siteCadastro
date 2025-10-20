@@ -27,15 +27,19 @@
                    required><br>
 
             <!-- SENHA -->
-            <input type="password" 
+            <input type="password"
+                   id="senha" 
                    name="senha" 
                    placeholder="Senha (6 dígitos)" 
                    pattern=".{6}" 
                    title="A senha deve ter exatamente 6 caracteres" 
-                   required><br>
+                   required>
+                   <button type="button" id="mostraSenha">👁️ Mostrar</button>
+                   <br>
 
             <!-- TELEFONE -->
             <input type="text" 
+                   id="telefone"
                    name="telefone" 
                    placeholder="Telefone (11-9999-9999)" 
                    maxlength="15" 
@@ -49,13 +53,6 @@
             <p><a href="login.php">Voltar ao login</a></p>
         </div>
     </div>
-
-    <script>
-        // Bloqueia caracteres inválidos no campo telefone
-        const telefone = document.querySelector('input[name="telefone"]');
-        telefone.addEventListener('input', function() {
-            this.value = this.value.replace(/[^0-9]/g, '');
-        });
-    </script>
+    <script src="javaScript/script.js"></script>
 </body>
 </html>
