@@ -13,15 +13,16 @@ $stmt->execute();
 if ($stmt->rowCount() > 0) {
     $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // Atualiza código e validade
-    $sql = "UPDATE usuarios SET codigo_recuperacao = :codigo, validade_codigo = :validade WHERE id = :id";
+    $sql = "UPDATE usuarios 
+            SET codigo_recuperacao = :codigo, validade_codigo = :validade 
+            WHERE id = :id";
     $stmt = $pdo->prepare($sql);
     $stmt->bindValue(':codigo', $codigo);
     $stmt->bindValue(':validade', $validade);
     $stmt->bindValue(':id', $usuario['id']);
     $stmt->execute();
 
-    // Aqui você pode usar mail() para e-mail ou API para SMS (ex: Twilio)
+    // Aqui você pode usar mail() para enviar o código.
     // mail($usuario['email'], "Código de Recuperação", "Seu código é: $codigo");
 
     header("Location: verificar_codigo.php?email=" . urlencode($usuario['email']));

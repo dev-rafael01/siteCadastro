@@ -9,8 +9,8 @@
     <div class="login-container">
         <h2>Redefinir Senha</h2>
         <form action="atualizar_senha.php" method="POST">
-            <input type="hidden" name="email" value="<?php echo $_GET['email']; ?>">
-            <input type="password" name="nova_senha" placeholder="Nova senha" required><br>
+            <input type="hidden" name="email" value="<?php echo htmlspecialchars($_GET['email']); ?>">
+            <input type="password" name="nova_senha" placeholder="Nova senha (mín. 6 caracteres)" required minlength="6"><br>
             <button type="submit">Atualizar Senha</button>
         </form>
     </div>

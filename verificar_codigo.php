@@ -7,9 +7,9 @@
 </head>
 <body>
     <div class="login-container">
-        <h2>Verificação</h2>
+        <h2>Verificação de Código</h2>
         <form action="valida_codigo.php" method="POST">
-            <input type="hidden" name="email" value="<?php echo $_GET['email']; ?>">
+            <input type="hidden" name="email" value="<?php echo htmlspecialchars($_GET['email']); ?>">
             <input type="text" name="codigo" placeholder="Digite o código recebido" required><br>
             <button type="submit">Verificar</button>
         </form>
