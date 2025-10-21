@@ -35,8 +35,8 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
             exit; 
         }
     } else {
-            echo "Usuário não encontrado! <a href='login.php'>Voltar</a>";
-            exit;         
+          echo "Usuário não encontrado! <button><a href='login.php'>Voltar</a></button>" ;
+          exit;         
        }
     }  else  {
          header("location: login.php");

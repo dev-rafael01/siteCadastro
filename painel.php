@@ -16,15 +16,15 @@ if(!isset($_SESSION['usuario'])){
 <head>
     <meta charset="UTF-8">
     <title>Painel do Usuário</title>
-    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/adm.estilo.css">
 </head>
 <body>
     <?php if ($_SESSION['nivel'] === 'admin'): ?>
     <p><a href="admin.php">Acessar área administrativa</a></p>
     <?php endif; ?>
 
-
     <h1>Bem-vindo, <?php echo $_SESSION['usuario']; ?>!</h1>
+    <br>
     <p>Email: <?php echo $_SESSION['email']; ?></p>
     <a href="logout.php">Sair</a>
     

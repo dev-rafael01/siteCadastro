@@ -17,7 +17,7 @@
         ?>
         
         <h2>Login do Sistema</h2>
-        <form action="valida_login.php" method="POST">
+        <form action="validar_login.php" method="POST">
             <input type="text" name="usuario" placeholder="Usuário" required><br>
             <input type="password" name="senha" placeholder="Senha" required><br>
             <button type="submit">Entrar</button>
