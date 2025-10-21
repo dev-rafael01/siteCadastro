@@ -1,5 +1,6 @@
 <?php
-require_once 'conexao/conexao.php';
+ require_once 'protecao_admin.php'; 
+ require_once 'conexao/conexao.php';
 
 $email = $_POST['email'];
 $nova_senha = password_hash($_POST['nova_senha'], PASSWORD_DEFAULT);

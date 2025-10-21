@@ -1,5 +1,5 @@
 <?php
-
+require_once 'protecao_admin.php'; 
 require_once 'conexao/conexao.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){

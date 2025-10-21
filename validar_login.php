@@ -1,5 +1,5 @@
 <?php
-
+ob_start();
 session_start();
 
 require_once 'conexao/conexao.php';
@@ -24,11 +24,12 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
             //Login correto, inicia sessão
             $_SESSION['usuario'] = $user ['usuario'];
             $_SESSION['email'] = $user ['email'];
+            $_SESSION['nivel'] = $user['nivel']; // <-- novo
 
             //Redirecionar para pagina protegida 
 
-            header("location: painel.php");
-            exit;
+        header("Location: /sitecadastro/painel.php");
+         exit;
         } else {
             echo "Senha incorreta! <a href='login.php'> Voltar </a>";
             exit; 

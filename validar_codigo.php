@@ -1,4 +1,5 @@
 <?php
+require_once 'protecao_admin.php'; 
 require_once 'conexao/conexao.php';
 
 $email = $_POST['email'];

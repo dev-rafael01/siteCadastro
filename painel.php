@@ -1,4 +1,5 @@
 <?php
+require_once 'conexao/conexao.php';
 
 session_start();
 
@@ -15,8 +16,14 @@ if(!isset($_SESSION['usuario'])){
 <head>
     <meta charset="UTF-8">
     <title>Painel do Usuário</title>
+    <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
+    <?php if ($_SESSION['nivel'] === 'admin'): ?>
+    <p><a href="admin.php">Acessar área administrativa</a></p>
+    <?php endif; ?>
+
+
     <h1>Bem-vindo, <?php echo $_SESSION['usuario']; ?>!</h1>
     <p>Email: <?php echo $_SESSION['email']; ?></p>
     <a href="logout.php">Sair</a>
